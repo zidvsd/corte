@@ -33,7 +33,7 @@ export default function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 flex flex-col justify-center min-h-screen px-6 md:px-10 pb-16 md:pb-24 max-w-7xl mx-auto">
+      <div className="relative z-10 flex flex-col justify-center min-h-screen px-6 md:px-10 pb-16 md:pb-24 container mx-auto">
         {/* Eyebrow */}
         <p className="font-sans text-[10px] tracking-[0.35em] uppercase text-white/40 mb-6">
           — Chapter One : The Craft

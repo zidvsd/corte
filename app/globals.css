@@ -21,6 +21,16 @@
   --font-serif: var(--font-cormorant);
 }
 
+@layer utilities {
+  .cinematic-zoom {
+    transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .group:hover .cinematic-zoom {
+    transform: scale(1.08);
+  }
+}
+
 body {
   background: var(--black);
   color: var(--white);
@@ -28,5 +38,5 @@ body {
 }
 
 .container {
-  @apply max-w-90 mx-auto px-4 lg:px-6 w-full
+  @apply px-4;
 }

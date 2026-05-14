@@ -49,8 +49,8 @@ export default function Navbar() {
           transition: "transform 0.3s ease",
         }}
       >
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="flex items-center justify-between h-16 md:h-20">
+        <div>
+          <div className="flex container items-center mx-auto justify-between h-16 md:h-20">
             {/* Wordmark */}
             <a
               href="#hero"
