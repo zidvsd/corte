@@ -11,7 +11,7 @@ export default function Gallery() {
             <p className="font-sans text-[10px] tracking-[0.35em] uppercase text-white/30 mb-3">
               — The Work
             </p>
-            <h2 className="font-serif text-[clamp(2.5rem,6vw,5rem)] leading-[0.9] tracking-tight text-white">
+            <h2 className="font-serif text-5xl leading-none lg:text-7xl">
               Every cut,
               <br />a statement.
             </h2>

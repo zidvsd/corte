@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-screen overflow-hidden bg-black pt-27"
+      className="relative w-full min-h-[90svh]  flex flex-col overflow-hidden bg-black pt-11"
     >
       {/* Background image */}
       <Image
@@ -12,7 +12,7 @@ export default function Hero() {
         alt="Corte Barbershop interior"
         fill
         priority
-        className="object-cover object-center opacity-40 pointer-events-none"
+        className="object-cover object-[50%_20%] opacity-40"
       />
 
       {/* Dark overlay for depth */}
@@ -32,9 +32,9 @@ export default function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 flex flex-col justify-center min-h-screen px-6 md:px-10 pb-16 md:pb-24 container mx-auto">
+      <div className="relative z-10 flex flex-col justify-center flex-1 px-6 md:px-10 pb-16 md:pb-18 container mx-auto">
         {/* Flex wrapper to keep content centered while pushing the footer to the bottom */}
-        <div className="flex-1 flex flex-col justify-center py-20">
+        <div className="flex-1 flex flex-col justify-center py-0">
           {/* Eyebrow */}
           <p className="font-sans text-[10px] tracking-[0.35em] uppercase text-white/40 mb-6">
             — Chapter One : The Craft

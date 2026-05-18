@@ -17,7 +17,7 @@ export default function Testimonials() {
           <p className="font-sans text-[10px] tracking-[0.35em] uppercase text-black/30 mb-3">
             — What Clients Say
           </p>
-          <h2 className="font-serif text-[clamp(2.5rem,6vw,5rem)] leading-[0.9] tracking-tight text-black">
+          <h2 className="mb-6 font-serif text-5xl leading-none lg:text-7xl text-black">
             Straight from
             <br />
             the chair.

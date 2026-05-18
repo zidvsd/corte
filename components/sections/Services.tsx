@@ -3,18 +3,8 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/data/services";
-
+import Image from "next/image";
 const categories = ["All", "Hair", "Beard", "Extras"] as const;
-
-const serviceImages = [
-  "https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1517832606299-7ae9b720a186?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?q=80&w=1200&auto=format&fit=crop",
-];
-
 export default function Services() {
   const [active, setActive] = useState<(typeof categories)[number]>("All");
 
@@ -40,13 +30,13 @@ export default function Services() {
     <section id="services" className="bg-off-white text-black py-28 lg:py-36">
       <div className="mx-auto container px-6 lg:px-10">
         {/* Header */}
-        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between mb-20">
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-8">
           <div className="max-w-xl">
             <span className="mb-4 block font-sans text-[11px] uppercase tracking-[0.35em] text-gray-mid">
               The Menu
             </span>
 
-            <h2 className="font-serif md:text-nowrap text-5xl leading-none lg:text-7xl">
+            <h2 className="mb-6 font-serif text-5xl leading-none lg:text-7xl">
               Every cut, considered.
             </h2>
           </div>
@@ -79,10 +69,12 @@ export default function Services() {
             >
               {/* Image */}
               <div className="relative h-72 overflow-hidden">
-                <img
-                  src={serviceImages[index % serviceImages.length]}
+                <Image
+                  src={service.image}
                   alt={service.name}
-                  className="h-full w-full object-cover transition-transform duration-1600 ease-out group-hover:scale-110"
+                  width={800}
+                  height={600}
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
                 <div className="absolute top-4 right-4 bg-black/40 backdrop-blur-md border border-white/10 px-3 py-1.5 selection:bg-transparent">
                   <span className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-white/90">

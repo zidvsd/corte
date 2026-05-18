@@ -106,6 +106,8 @@ export default function Navbar() {
       </header>
 
       {/* Mobile menu overlay */}
+      {/* Close button */}
+
       <div
         className={`fixed inset-0 z-[70] bg-black flex flex-col justify-center px-8 transition-all duration-500 lg:hidden ${
           menuOpen
@@ -113,6 +115,16 @@ export default function Navbar() {
             : "opacity-0 pointer-events-none"
         }`}
       >
+        {/* CLOSE BUTTON (move here 👇) */}
+        <button
+          onClick={() => setMenuOpen(false)}
+          className="absolute top-14 right-4 w-10 h-10 flex items-center justify-center z-[80]"
+          aria-label="Close menu"
+        >
+          <span className="block w-6 h-px bg-white rotate-45 absolute" />
+          <span className="block w-6 h-px bg-white -rotate-45 absolute" />
+        </button>
+
         {/* Metadata strip */}
         <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-white mb-16">
           Est. MMXXIV &nbsp;·&nbsp; Barbershop
