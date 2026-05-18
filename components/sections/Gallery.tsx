@@ -1,7 +1,51 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { animate, stagger } from "motion";
 import Image from "next/image";
 import { gallery } from "@/lib/data/gallery";
 import { ExternalLink } from "lucide-react";
 export default function Gallery() {
+  const gridRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (!gridRef.current) return;
+
+    // 2. Fixed: querySelectorAll handles standard Elements.
+    // Typecast explicitly to HTMLDivElement[] to help animate match props.
+    const items = Array.from(
+      gridRef.current.querySelectorAll<HTMLDivElement>(".gallery-item"),
+    );
+
+    if (items.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+
+        // 3. Fixed: passing options matching motion-react's DOM animate signature
+        animate(
+          items,
+          {
+            opacity: [0, 1],
+            // motion-react accepts flat shorthand layout properties like 'y' instead of complex transform strings
+            y: [20, 0],
+          },
+          {
+            delay: stagger(0.08),
+            duration: 0.6,
+            ease: "easeOut", // Changed "ease-out" to "easeOut" standard casing
+          },
+        );
+
+        observer.disconnect(); // run once
+      },
+      { threshold: 0.2 },
+    );
+
+    observer.observe(gridRef.current);
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <section id="gallery" className="w-full bg-black py-24 md:py-32">
       <div className="mx-auto container">
@@ -23,11 +67,14 @@ export default function Gallery() {
         </div>
 
         {/* Grid — desktop: 3-col masonry-style, tablet: 2-col, mobile: 1-col */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 auto-rows-[280px]">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 auto-rows-[280px]"
+          ref={gridRef}
+        >
           {gallery.map((item) => (
             <div
               key={item.id}
-              className={`relative overflow-hidden group bg-white/5 ${
+              className={`gallery-item opacity-0 relative overflow-hidden group bg-white/5 ${
                 item.span === "tall" ? "sm:row-span-2" : "row-span-1"
               }`}
             >
