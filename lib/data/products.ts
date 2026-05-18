@@ -9,7 +9,7 @@ export const products = [
     description: "Strong hold with a natural matte finish for textured styles.",
     price: "₱650",
     image:
-      "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1775126251009-45be1acaf903?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     latest: true,
     featured: true,
     recentlyAdded: true,
@@ -21,7 +21,7 @@ export const products = [
     description: "Medium hold pomade with a polished finish for slick styles.",
     price: "₱580",
     image:
-      "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1775126250995-8d2364537089?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     latest: false,
     featured: false,
     recentlyAdded: false,
@@ -33,7 +33,7 @@ export const products = [
     description: "Lightweight spray that adds volume and effortless texture.",
     price: "₱520",
     image:
-      "https://images.unsplash.com/photo-1522338140262-f46f5913618a?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1550572017-4b7a301b9d81?q=80&w=1041&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     latest: true,
     featured: false,
     recentlyAdded: true,
@@ -49,7 +49,7 @@ export const products = [
     description: "Gentle cleansing shampoo formulated for everyday freshness.",
     price: "₱720",
     image:
-      "https://images.unsplash.com/photo-1556228578-dd6c7f7d2a20?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1701992678972-d5a053ad0fb0?q=80&w=657&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     latest: false,
     featured: false,
     recentlyAdded: true,
@@ -75,7 +75,7 @@ export const products = [
       "Nourishing oil blend for healthy scalp care and beard conditioning.",
     price: "₱480",
     image:
-      "https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     latest: false,
     featured: false,
     recentlyAdded: true,

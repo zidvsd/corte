@@ -1,38 +1,58 @@
 export const gallery = [
   {
-    src: "/gallery/cut-01.jpg",
-    alt: "Clean skin fade with sharp hairline",
+    id: 1,
+    alt: "Clean skin fade, sharp hairline",
+    span: "tall", // row-span-2
+    src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=800&auto=format&fit=crop",
   },
   {
-    src: "/gallery/cut-02.jpg",
-    alt: "Classic scissor cut, textured finish",
+    id: 2,
+    alt: "Scissor cut, textured finish",
+    span: "normal",
+    src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=800&auto=format&fit=crop",
   },
   {
-    src: "/gallery/cut-03.jpg",
+    id: 3,
     alt: "Low fade with beard shape up",
+    span: "normal",
+    src: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=800&auto=format&fit=crop",
   },
   {
-    src: "/gallery/cut-04.jpg",
+    id: 4,
     alt: "High fade, slicked back top",
+    span: "normal",
+    src: "https://images.unsplash.com/photo-1640301133543-41fe25ad6450?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    src: "/gallery/cut-05.jpg",
-    alt: "Full hot towel shave, clean finish",
+    id: 5,
+    alt: "Barber at work, detail shot",
+    span: "tall", // row-span-2
+    src: "https://images.unsplash.com/photo-1622288432450-277d0fef5ed6?q=80&w=800&auto=format&fit=crop",
   },
   {
-    src: "/gallery/cut-06.jpg",
+    id: 6,
     alt: "Mid fade with defined part",
+    span: "normal",
+    src: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?q=80&w=800&auto=format&fit=crop",
   },
   {
-    src: "/gallery/cut-07.jpg",
-    alt: "Beard trim and shape, natural outline",
+    id: 7,
+    alt: "Beard trim, natural outline",
+    span: "normal",
+    src: "https://images.unsplash.com/photo-1599011176306-4a96f1516d4d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    src: "/gallery/cut-08.jpg",
+    id: 8,
     alt: "Textured crop with skin fade",
+    span: "normal",
+    src: "https://images.unsplash.com/photo-1567894340315-735d7c361db0?q=80&w=800&auto=format&fit=crop",
   },
   {
-    src: "/gallery/cut-09.jpg",
-    alt: "Shape up, edges and neckline clean",
+    id: 9,
+    alt: "Shape up, edges and neckline",
+    span: "normal",
+    src: "https://images.unsplash.com/photo-1512690459411-b9245aed614b?q=80&w=800&auto=format&fit=crop",
   },
 ] as const;
+
+export type GalleryItem = (typeof gallery)[number];

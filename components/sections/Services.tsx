@@ -46,7 +46,7 @@ export default function Services() {
               The Menu
             </span>
 
-            <h2 className="font-serif text-nowrap text-5xl leading-none lg:text-7xl">
+            <h2 className="font-serif md:text-nowrap text-5xl leading-none lg:text-7xl">
               Every cut, considered.
             </h2>
           </div>
@@ -57,7 +57,8 @@ export default function Services() {
               <button
                 key={category}
                 onClick={() => setActive(category)}
-                className={`border-b pb-1 font-sans text-[11px] uppercase tracking-[0.28em] transition-all duration-300 ${
+                type="button"
+                className={`border-b pb-1 font-sans text-[11px] uppercase tracking-[0.28em] transition-all duration-300 pointer-events-auto cursor-pointer py-2 ${
                   active === category
                     ? "border-black text-black"
                     : "border-transparent text-gray-mid hover:text-black"
@@ -83,9 +84,8 @@ export default function Services() {
                   alt={service.name}
                   className="h-full w-full object-cover transition-transform duration-1600 ease-out group-hover:scale-110"
                 />
-
-                <div className="absolute right-4 top-4 bg-white px-4 py-1.5">
-                  <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-black">
+                <div className="absolute top-4 right-4 bg-black/40 backdrop-blur-md border border-white/10 px-3 py-1.5 selection:bg-transparent">
+                  <span className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-white/90">
                     {service.price}
                   </span>
                 </div>

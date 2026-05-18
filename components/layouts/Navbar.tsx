@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import { navs } from "@/lib/data/navs";
-import { Button } from "@headlessui/react";
 import { ExternalLink } from "lucide-react";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -39,14 +38,14 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 bg-black ${
+        className={`fixed top-11 left-0 right-0 z-[30] bg-black ${
           scrolled ? "border-b border-white/10" : ""
         }`}
         style={{
-          top: "44px",
           transform:
-            hidden && !menuOpen ? "translateY(-100%)" : "translateY(0)",
+            hidden && !menuOpen ? "translateY(-120px)" : "translateY(0)",
           transition: "transform 0.3s ease",
+          willChange: "transform",
         }}
       >
         <div>
@@ -82,27 +81,23 @@ export default function Navbar() {
             </a>
 
             {/* Mobile hamburger */}
-            <Button
+            <button
+              onTouchStart={(e) => console.log("touch start", e)}
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden flex flex-col justify-center items-center w-8 h-8 relative z-50 gap-1.25"
+              className="lg:hidden flex flex-col justify-center items-center w-10 h-10 z-[80] gap-1.25 cursor-pointer relative"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
+              type="button"
             >
               <span
-                className={`block h-px w-6 bg-white transition-all duration-300 origin-center ${
-                  menuOpen ? "rotate-45 translate-y-1.5" : ""
-                }`}
+                className={`block h-px w-6 bg-white transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-1.5" : ""}`}
               />
               <span
-                className={`block h-px bg-white transition-all duration-300 ${
-                  menuOpen ? "w-0 opacity-0" : "w-4"
-                }`}
+                className={`block h-px bg-white transition-all duration-300 ${menuOpen ? "w-0 opacity-0" : "w-4"}`}
               />
               <span
-                className={`block h-px w-6 bg-white transition-all duration-300 origin-center ${
-                  menuOpen ? "-rotate-45 -translate-y-1.5" : ""
-                }`}
+                className={`block h-px w-6 bg-white transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}
               />
-            </Button>
+            </button>
           </div>
         </div>
 
@@ -112,14 +107,14 @@ export default function Navbar() {
 
       {/* Mobile menu overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-black flex flex-col justify-center px-8 transition-all duration-500 lg:hidden ${
+        className={`fixed inset-0 z-[70] bg-black flex flex-col justify-center px-8 transition-all duration-500 lg:hidden ${
           menuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         }`}
       >
         {/* Metadata strip */}
-        <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-white/30 mb-16">
+        <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-white mb-16">
           Est. MMXXIV &nbsp;·&nbsp; Barbershop
         </p>
 
@@ -140,13 +135,14 @@ export default function Navbar() {
 
         {/* Mobile CTA */}
         <div className="mt-16">
-          <Button
+          <a
+            href="#booking"
             onClick={() => setMenuOpen(false)}
-            className="inline-flex items-center gap-2 font-sans text-[11px] tracking-[0.2em] uppercase text-white border border-white/40 px-6 py-3"
+            className="inline-flex items-center gap-2 font-sans text-[11px] tracking-[0.2em] uppercase text-white border border-white/40 px-6 py-3 pointer-events-auto cursor-pointer hover:border-white transition-colors min-h-11"
           >
-            <a href="">Reserve a chair</a>
+            Reserve a chair
             <ExternalLink size={14} />
-          </Button>
+          </a>
         </div>
       </div>
     </>

@@ -11,10 +11,16 @@ export const hours = [
 export const location = {
   name: "Corte Barbershop",
   address: "218 Bedford Ave, Mabitac, Laguna",
+  addressLine1: "218 Bedford Ave",
+  addressLine2: "Mabitac, Laguna 4015",
   phone: "(02) 8927-8667",
   email: "hello@cortebarbershop.ph",
   instagram: "https://instagram.com/cortebarbershop",
-  googleMapsUrl: "https://maps.google.com/?q=Mabitac,Laguna",
-  googleMapsEmbed:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3873.0!2d121.43!3d14.42!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDI1JzEyLjAiTiAxMjHCsDI1JzQ4LjAiRQ!5e0!3m2!1sen!2sph!4v1620000000000!5m2!1sen!2sph",
+  // Opens Google Maps directions in a new tab — no iframe needed
+  googleMapsUrl: "https://maps.google.com/?q=Mabitac+Laguna+Philippines",
+  // Static exterior/street photo — replace with your actual shop exterior
+  exteriorPhoto:
+    "https://images.unsplash.com/photo-1633121050918-ab208f1508b7?q=80&w=1373&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 } as const;
+
+export type HoursEntry = (typeof hours)[number];
